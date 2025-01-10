@@ -137,7 +137,7 @@ Credits
 
 Pre-trained Models: Hugging Face Transformers.
 
-Deployment: Render.com.
+Deployment: Render.com. (Due to costing and free tier plan the model is not up i tried it on render but due to unavailability of ports its not able to deploy)
 
 Background Removal: Rembg library.
 
@@ -147,6 +147,6 @@ For queries or suggestions, please contact:
 
 Name: Omkar Raotole
 
-Email: [your-email@example.com]
+Email: omkarraotole135@gmail.com
 
-GitHub: github.com/your-username
+
