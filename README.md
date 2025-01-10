@@ -115,22 +115,6 @@ Open your browser and navigate to:
 
 http://127.0.0.1:5000
 
-File Structure
-
-AI_Virtual_Closet/
-│
-├── app.py                # Flask backend logic
-├── requirements.txt      # List of dependencies
-├── templates/
-│   └── index.html        # Frontend HTML file
-├── static/
-│   ├── css/              # Stylesheets
-│   ├── js/               # JavaScript files
-│   └── images/           # Placeholder images
-├── uploads/              # Uploaded images directory
-├── processed/            # Processed images directory
-└── README.md             # Documentation
-
 Future Improvements
 
 Enhanced Classification:
