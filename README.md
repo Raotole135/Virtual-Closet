@@ -84,7 +84,9 @@ On Linux/Mac:
 Run the application using gunicorn:
 
 gunicorn -w 4 -b 0.0.0.0:5000 application:app
+
 (Due to free tier plan the ports are limited and hence model can't be deployed for long time. It does work but due to limited resource not deployed on render)
+![image](https://github.com/user-attachments/assets/bd57e984-0dae-4ffa-8c2d-c071c2bce1ff)
 
 4. Visit the App
 
