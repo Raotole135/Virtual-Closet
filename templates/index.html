@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Virtual Closet</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>My Virtual Closet</h1>
+        </div>
+    </header>
+    <main>
+        <section class="upload-section">
+            <h2>Upload Your Outfit</h2>
+            <form id="uploadForm">
+                <input type="file" name="image" id="imageUpload" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <section class="closet-section">
+            <div class="closet-grid">
+                <div class="closet-item">
+                    <h3>Upper Items</h3>
+                    <div id="upperGrid" class="image-grid"></div>
+                </div>
+                <div class="closet-item">
+                    <h3>Lower Items</h3>
+                    <div id="lowerGrid" class="image-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chatbot-section">
+            <h2>AI Stylist Chatbot</h2>
+            <div id="chatMessages" class="chat-box"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Ask me about your outfit..." />
+                <button id="sendMessage">Send</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Virtual Closet. All Rights Reserved.</p>
+    </footer>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
