@@ -2,91 +2,61 @@
 
 Project Overview
 
-This project is a web-based application that combines AI-powered image processing and a chatbot to create a Virtual Closet and an AI Stylist. Users can upload images of outfits, classify clothing items (e.g., shirts, pants, dresses), and receive tailored styling recommendations through a conversational chatbot.
+This project is a web-based application that combines AI-powered image processing and a chatbot to create a Virtual Closet and an AI Stylist. Users can upload images of outfits, classify clothing items (e.g., shirts, pants, dresses), and receive tailored styling recommendations through a conversational chatbot. The goal is to simplify personal wardrobe management and provide expert-like fashion advice using artificial intelligence.
 
-Key Features
+Key Deliverables
 
-Virtual Closet:
+A working prototype of the AI Virtual Closet and Stylist Chatbot, demonstrating end-to-end functionality.
 
-Extracts and separates upper and lower clothing items from uploaded images.
+This README file, which includes:
 
-Classifies clothing items using a pre-trained Vision Transformer (ViT) model.
+The problem solved by the project.
 
-Displays processed images with dynamic labels for each clothing item.
+The tools, frameworks, and algorithms used.
 
-AI Stylist Chatbot:
+Instructions to run the solution.
 
-Provides detailed feedback on the uploaded outfit.
+Optional: A brief (1-2 minute) video demo to showcase the functionality and user interaction.
 
-Suggests improvements, complementary accessories, and styling tips.
+Problem Solved
 
-Uses pre-trained GPT-based models for generating natural language responses.
+The project addresses two main challenges in personal fashion management:
 
-Web Interface:
+Clothing Classification: Automating the process of identifying and categorizing clothing items from user-uploaded images.
 
-User-friendly design with sections for image upload, processed results, and chatbot interactions.
+Traditional methods require manual sorting and tagging, which is time-consuming.
 
-Responsive layout for better usability.
+Styling Recommendations: Offering personalized fashion advice for outfits, including tips for improvement and accessory suggestions.
 
-Technologies Used
+Conventional methods rely on human expertise, which is not always accessible or cost-effective.
+
+This solution bridges the gap between manual wardrobe management and AI-driven styling, making fashion advice and digital closet organization accessible to all users.
+
+Tools, Frameworks, and Algorithms Used
 
 Backend
 
-Flask: Web framework for backend functionality.
+Flask: Lightweight and efficient web framework for backend development.
 
-Rembg: Background removal for clothing images.
+Rembg: Python library for background removal from images, allowing precise clothing extraction.
 
-Transformers: Hugging Face library for Vision Transformer and GPT models.
+Transformers: Hugging Face library used for implementing Vision Transformer (ViT) and GPT models.
 
-Waitress/Gunicorn: Production WSGI servers.
+Waitress/Gunicorn: Production-grade WSGI servers for serving the application.
 
 Frontend
 
-HTML, CSS, JavaScript: For a clean and interactive user interface.
+HTML, CSS, JavaScript: For designing a responsive and user-friendly interface.
 
 Deployment
 
-Render: For hosting the web application.
+Render: A modern cloud platform chosen for its free tier, ease of integration, and scalability.
 
-Challenges and Decisions
+Algorithms
 
-1. Image Processing:
+Vision Transformer (ViT): Utilized for image classification to identify upper and lower clothing items dynamically.
 
-Tried: Vision Transformer for image classification.
-
-Challenges:
-
-Pre-trained models required additional fine-tuning for specific clothing categories.
-
-High computational costs for real-time image classification on large datasets.
-
-Solution: Used a lightweight pre-trained Vision Transformer model from Hugging Face for acceptable performance.
-
-2. AI Chatbot:
-
-Tried:
-
-OpenAI's gpt-4 and gpt-3.5-turbo.
-
-Alternatives like Cohere and AI21 Labs.
-
-Challenges:
-
-OpenAI's models incurred high costs for frequent API usage.
-
-Alternative APIs (Cohere/AI21) had latency issues and limited free usage quotas.
-
-Solution: Used Hugging Face's GPT-2 model for generating stylist recommendations locally.
-
-3. Deployment:
-
-Tried:
-
-Gunicorn: Incompatible with Windows during local development due to fcntl dependency.
-
-AWS EC2: Time-consuming setup with limited scalability for quick iterations.
-
-Solution: Deployed on Render, leveraging its free tier and simple GitHub integration.
+GPT-2: Fine-tuned for generating natural and engaging styling recommendations based on classified clothing items.
 
 Setup Instructions
 
@@ -97,49 +67,79 @@ cd AI_Virtual_Closet
 
 2. Install Dependencies
 
+Install all necessary Python libraries using:
+
 pip install -r requirements.txt
 
 3. Run the Application Locally
 
 On Windows:
 
+Run the application using waitress, which is compatible with Windows:
+
 waitress-serve --port=5000 application:app
 
 On Linux/Mac:
 
+Run the application using gunicorn:
+
 gunicorn -w 4 -b 0.0.0.0:5000 application:app
+(Due to free tier plan the ports are limited and hence model can't be deployed for long time. It does work but due to limited resource not deployed on render)
 
 4. Visit the App
 
-Open your browser and navigate to:
+Access the application in your web browser at:
 
 http://127.0.0.1:5000
+
+Evaluation Criteria
+
+1. Technical Feasibility
+
+The solution effectively processes uploaded images to extract clothing items and provides styling advice dynamically.
+
+2. Creativity
+
+Combines cutting-edge AI technologies like Vision Transformer and GPT for seamless integration of image processing and conversational recommendations.
+
+3. Scalability
+
+Designed to handle multiple users and can be extended to integrate with e-commerce platforms or mobile applications for broader usability.
+
+4. User Experience
+
+The application provides a visually appealing and intuitive interface, ensuring a smooth user experience with interactive features.
 
 Future Improvements
 
 Enhanced Classification:
 
-Fine-tune Vision Transformer with a custom dataset for improved clothing detection accuracy.
+Fine-tune the Vision Transformer model with a custom dataset for better accuracy in identifying specific clothing types (e.g., formal vs. casual).
 
 Advanced Chatbot:
 
-Integrate gpt-4 or similar advanced models if budget and resources allow.
+Replace GPT-2 with a more advanced model like GPT-4 for richer and more context-aware recommendations.
 
 Mobile Compatibility:
 
-Develop a mobile app with the same functionality for a broader audience.
+Develop a mobile application to enhance accessibility and user convenience.
 
 Shopping Integration:
 
-Search for similar clothing items online and provide shopping links.
+Include features to search for similar clothing items online and provide direct shopping links to users.
+
+Outfit Suggestions:
+
+Enable the chatbot to suggest complete outfits based on the user's existing virtual closet.
+
 
 Credits
 
 Pre-trained Models: Hugging Face Transformers.
 
-Deployment: Render.com. (Due to costing and free tier plan the model is not up i tried it on render but due to unavailability of ports its not able to deploy)
+Deployment: Render.com for hosting and serving the application.
 
-Background Removal: Rembg library.
+Background Removal: Rembg library for seamless clothing extraction.
 
 Contact
 
